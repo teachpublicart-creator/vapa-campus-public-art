@@ -111,7 +111,7 @@ function normalize(rows){
  }
  return {schools:[...newSchools.values()].filter(s=>out.some(a=>a.schoolId===s.id)),arts:out};
 }
-function schoolOptions(){const prev=$('#schoolSelect').value;for(const selector of ['#schoolSelect','#schoolSelectMap']){const el=$(selector);el.innerHTML='<option value="all">Select a school (all campus art)</option>';for(const s of schools){const o=document.createElement('option');o.value=s.id;o.textContent=s.name;el.append(o)}el.value=schools.some(s=>s.id===prev)?prev:'all'}}
+function schoolOptions(){const prev=$('#schoolSelect').value;for(const selector of ['#schoolSelect','#schoolSelectMap']){const el=$(selector);el.innerHTML='<option value="all">Select a School</option>';for(const s of schools){const o=document.createElement('option');o.value=s.id;o.textContent=s.name;el.append(o)}el.value=schools.some(s=>s.id===prev)?prev:'all'}}
 function render(){
  $('#schoolCount').textContent=schools.length;$('#artCount').textContent=arts.length;
  const q=$('#search').value.trim().toLowerCase(),sid=$('#schoolSelect').value,theme=$('#themeSelect').value;
